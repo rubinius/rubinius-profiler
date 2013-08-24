@@ -1,17 +1,21 @@
-# -*- encoding: utf-8 -*-
-require File.expand_path('../lib/rubinius-profiler/version', __FILE__)
+# coding: utf-8
+require './lib/rubinius/profiler/version'
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Brian Shirai"]
-  gem.email         = ["brixen@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+Gem::Specification.new do |spec|
+  spec.name          = "rubinius-profiler"
+  spec.version       = Rubinius::Profiler::VERSION
+  spec.authors       = ["Brian Shirai"]
+  spec.email         = ["brixen@gmail.com"]
+  spec.description   = %q{Rubinius profiler.}
+  spec.summary       = %q{Rubinius profiler.}
+  spec.homepage      = "https://github.com/rubinius/rubinius-profiler"
+  spec.license       = "BSD"
 
-  gem.files         = `git ls-files`.split($\)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "rubinius-profiler"
-  gem.require_paths = ["lib"]
-  gem.version       = Rubinius::Profiler::VERSION
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rake", "~> 10.0"
 end

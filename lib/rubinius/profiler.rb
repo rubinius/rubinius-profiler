@@ -1,4 +1,4 @@
-require "rubinius-profiler/version"
+require "rubinius/profiler/version"
 
 module Rubinius
   module Profiler
