@@ -1,3 +1,3 @@
 require 'mkmf'
 
-create_makefile 'rubinius/profiler/profiler'
+create_makefile 'rubinius/profiler/ext/profiler'

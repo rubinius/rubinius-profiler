@@ -20,7 +20,7 @@ module Rubinius
       @loaded = false
       def self.load
         return if @loaded
-        Rubinius::Tooling.load File.expand_path("../profiler", __FILE__)
+        Rubinius::Tooling.load File.expand_path("../ext/profiler", __FILE__)
         @loaded = true
       end
 
