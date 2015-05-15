@@ -146,7 +146,10 @@ module Rubinius
         # for each unique method.
 
         info[:nodes].each do |n_id, data|
-          sub = data[4].inject(0) { |a,n| a + info[:nodes][n][1] }
+          sub = data[4].inject(0) do |a,n|
+            next unless x = info[:nodes][n]
+            a + x[1]
+          end
 
           meth = info[:methods][data[0]]
           if cur = meth[:edge_total]
